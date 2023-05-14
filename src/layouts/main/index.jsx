@@ -8,8 +8,12 @@ import { Header } from "@containers/header-container/HeaderContainer";
 const MainLayouts = () => {
   return (
     <S.MainLayout>
-      <Header />
-      <Main />
+      <S.Header>
+        <Header />
+      </S.Header>
+      <S.Main>
+        <Main />
+      </S.Main>
     </S.MainLayout>
   );
 };
