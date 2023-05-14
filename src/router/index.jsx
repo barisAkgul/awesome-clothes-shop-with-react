@@ -1,8 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 
+import { MainLayouts } from "@layouts/main";
+
 export const router = createBrowserRouter([
   {
-    element: <div>MainLayout</div>,
+    element: <MainLayouts />,
     children: [
       {
         errorElement: <h1>Error Page</h1>,
