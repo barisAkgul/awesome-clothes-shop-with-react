@@ -3,9 +3,9 @@ import { IoPersonOutline, IoSearchOutline } from "react-icons/io5";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 
-import * as S from "./IconSectionContainer.styled";
+import * as S from "./IconSection.styled";
 
-const IconSectionContainer = () => {
+const IconSection = () => {
   return (
     <S.IconSectionContainer>
       <IoPersonOutline />
@@ -16,4 +16,4 @@ const IconSectionContainer = () => {
   );
 };
 
-export default IconSectionContainer;
+export default IconSection;
