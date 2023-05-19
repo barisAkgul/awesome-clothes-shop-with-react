@@ -5,10 +5,10 @@ import * as S from "./Navbar.styled";
 const Navbar = () => {
   return (
     <S.Navbar>
-      <S.NavbarItem>Link 1</S.NavbarItem>
-      <S.NavbarItem>Link 2</S.NavbarItem>
-      <S.NavbarItem>Link 3</S.NavbarItem>
-      <S.NavbarItem>Link 4</S.NavbarItem>
+      <S.NavbarItem>Home</S.NavbarItem>
+      <S.NavbarItem>Shop</S.NavbarItem>
+      <S.NavbarItem>Blog</S.NavbarItem>
+      <S.NavbarItem>Contact</S.NavbarItem>
     </S.Navbar>
   );
 };
