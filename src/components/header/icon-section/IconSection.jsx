@@ -16,4 +16,4 @@ const IconSection = () => {
   );
 };
 
-export default IconSection;
+export { IconSection };
