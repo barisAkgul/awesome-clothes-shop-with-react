@@ -10,7 +10,7 @@ export const FooterContainer = styled.footer`
 `;
 
 export const FooterCol = styled.div`
-  padding-left: 20px;
+  padding-left: 80px;
 `;
 
 export const FooterHeading = styled.h4`

@@ -11,3 +11,10 @@ const parserProduct = (product) => {
     images,
   };
 };
+
+export const filterProducts = (products, searchValue) =>
+  searchValue
+    ? products.filter((product) =>
+        product.product.name.toLowerCase().includes(searchValue.toLowerCase())
+      )
+    : [];

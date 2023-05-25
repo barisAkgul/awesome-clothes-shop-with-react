@@ -1,26 +1,18 @@
 import React, { useEffect, useState } from "react";
-import Stripe from "stripe";
+import { useStore } from "@stores";
 
 import { ProductCart } from "@components/common/product-cart/ProductCart";
 
 import * as S from "./FeaturedProducts.styled";
 
-async function getStripeProducts() {
-  const stripe = new Stripe(import.meta.env.VITE_STRIPE_SECRET ?? "", {
-    apiVersion: "2020-08-27",
-  });
-
-  const res = await stripe.prices.list({ expand: ["data.product"] });
-
-  const products = res.data;
-  return products;
-}
-
 const FeaturedProducts = () => {
   const [products, setProducts] = useState([]);
+  const { getProducts } = useStore();
 
   useEffect(() => {
-    getStripeProducts().then((response) => setProducts(response));
+    getProducts()
+      .then((response) => setProducts(response.slice(0, 4)))
+      .catch((e) => console.log("Get Products Error: ", e));
   }, []);
 
   console.log(products);

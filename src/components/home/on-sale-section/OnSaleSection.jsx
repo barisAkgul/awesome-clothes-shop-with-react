@@ -8,7 +8,7 @@ const OnSaleSection = () => {
     <S.SaleGrid>
       {onSaleData.map((item) => {
         return (
-          <S.SaleCard>
+          <S.SaleCard key={item.imgSrc}>
             <S.SaleImage src={item.imgSrc} />
             <S.SaleContent>
               <S.SaleSubtitle>{item.subtitle}</S.SaleSubtitle>

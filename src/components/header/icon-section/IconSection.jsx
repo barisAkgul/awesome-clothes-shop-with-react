@@ -4,12 +4,13 @@ import { IoIosHeartEmpty } from "react-icons/io";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 
 import * as S from "./IconSection.styled";
+import SearchIcon from "./search-icon/SearchIcon";
 
 const IconSection = () => {
   return (
     <S.IconSectionContainer>
       <IoPersonOutline />
-      <IoSearchOutline />
+      <SearchIcon />
       <IoIosHeartEmpty />
       <HiOutlineShoppingBag />
     </S.IconSectionContainer>

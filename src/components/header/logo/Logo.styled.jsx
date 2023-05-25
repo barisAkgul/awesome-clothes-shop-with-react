@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
 export const Logo = styled.div`
-  text-align: center;
+  font-size: 24px;
 `;

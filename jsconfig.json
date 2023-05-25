@@ -7,7 +7,9 @@
       "@containers/*": ["src/containers/*"],
       "@pages/*": ["src/pages/*"],
       "@router/*": ["src/router/*"],
-      "@layouts/*": ["src/layouts/*"]
+      "@layouts/*": ["src/layouts/*"],
+      "@stores/*": ["src/stores/*"],
+      "@helpers/*": ["src/helpers/*"]
     }
   }
 }

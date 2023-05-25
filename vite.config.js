@@ -12,6 +12,8 @@ export default defineConfig({
       "@router": "/src/router",
       "@pages": "/src/pages",
       "@layouts": "/src/layouts",
+      "@stores": "/src/stores",
+      "@helpers": "/src/helpers",
     },
   },
 });

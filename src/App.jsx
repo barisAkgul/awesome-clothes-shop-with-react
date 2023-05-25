@@ -2,6 +2,7 @@ import { RouterProvider } from "react-router-dom";
 
 import "@styles/reset.css";
 import "@styles/global.css";
+import "@styles/variables.css";
 
 import { router } from "./router";
 

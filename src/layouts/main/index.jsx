@@ -4,6 +4,7 @@ import * as S from "./styles";
 
 import { Main } from "@components/main";
 import { Header } from "@containers/header-container/HeaderContainer";
+import { Footer } from "@components/footer/Footer";
 
 const MainLayouts = () => {
   return (
@@ -14,6 +15,9 @@ const MainLayouts = () => {
       <S.Main>
         <Main />
       </S.Main>
+      <S.Footer>
+        <Footer />
+      </S.Footer>
     </S.MainLayout>
   );
 };
