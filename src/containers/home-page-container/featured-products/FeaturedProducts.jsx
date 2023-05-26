@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { useStore } from "@stores";
+import useFetch from "@hooks/useFetch";
 
 import { ProductCart } from "@components/common/product-cart/ProductCart";
 
 import * as S from "./FeaturedProducts.styled";
 
 const FeaturedProducts = () => {
-  const [products, setProducts] = useState([]);
   const { getProducts } = useStore();
+  const { data: products, error, loading } = useFetch(() => getProducts());
 
-  useEffect(() => {
-    getProducts()
-      .then((response) => setProducts(response.slice(0, 4)))
-      .catch((e) => console.log("Get Products Error: ", e));
-  }, []);
+  if (loading) {
+    return <h1>Loading</h1>;
+  }
 
-  console.log(products);
+  if (error) console.log(error);
+
+  if (products) {
+    console.log(products);
+  }
+
   return (
     <S.FeaturedProductsContainer>
       <h2>Featured Products</h2>
