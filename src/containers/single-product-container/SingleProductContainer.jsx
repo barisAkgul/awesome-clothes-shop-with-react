@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useStore } from "@stores/index";
+import React from "react";
 
-export const SingleProductContainer = ({ productId }) => {
-  const [product, setProduct] = useState([]);
-  const { getProduct } = useStore();
+import { parserProduct } from "@helpers/utils";
 
-  useEffect(() => {
-    getProduct(productId)
-      .then((response) => setProduct(response))
-      .catch((e) => console.log("Get Product Error: ", e));
-  }, []);
+export const SingleProductContainer = ({ product }) => {
+  const { cost, description, name, images } = parserProduct(product);
+  console.log(cost, description, name, images);
 
-  console.log(product);
   return <div>SingleProductContainer</div>;
 };
