@@ -3,13 +3,12 @@ import { useState, useEffect, useRef } from "react";
 const useFetch = (requestCallback) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true); // Başlangıçta loading durumu true olarak ayarlanır
 
   useEffect(() => {
     const abortController = new AbortController();
     const signal = abortController.signal;
     const doFetch = async () => {
-      setLoading(true);
       try {
         const results = await requestCallback();
         if (!signal.aborted) {
