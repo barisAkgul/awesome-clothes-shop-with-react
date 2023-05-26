@@ -4,6 +4,8 @@ import { MainLayouts } from "@layouts/main";
 
 //pages
 import { HomePage } from "@pages/home-page/HomePage.jsx";
+import { SingleProductPage } from "@pages/single-product-page/SingleProductPage";
+
 export const router = createBrowserRouter([
   {
     element: <MainLayouts />,
@@ -14,6 +16,10 @@ export const router = createBrowserRouter([
           {
             path: "/",
             element: <HomePage />,
+          },
+          {
+            path: "detail/:productId",
+            element: <SingleProductPage />,
           },
           {
             path: "*",
