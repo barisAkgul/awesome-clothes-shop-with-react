@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useStore } from "@stores/index";
 import useFetch from "@hooks/useFetch";
 
 import { SingleProductContainer } from "@containers/single-product-container/SingleProductContainer";
+import Loading from "@components/common/loading/Loading";
 
 const SingleProductPage = () => {
   const { productId } = useParams();
@@ -14,15 +15,16 @@ const SingleProductPage = () => {
     loading,
   } = useFetch(() => getProduct(productId));
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (loading) {
-    return <h1>Loading</h1>;
+    return <Loading />;
   }
 
   if (error) console.log(error);
 
-  if (product) {
-    console.log(product);
-  }
   return <SingleProductContainer product={product} />;
 };
 
