@@ -1,0 +1,30 @@
+.shopping-cart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-right: 15px;
+
+  .shopping-cart-items-container {
+    max-height: 68vh;
+    overflow-y: auto;
+  }
+
+  .shopping-cart-container-bottom-section {
+    .cart-subtotal {
+      display: flex;
+      justify-content: space-between;
+      color: #2e2d2e;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .checkout-button {
+      background-color: #2e2d2e;
+      padding: 10px;
+      color: white;
+      text-align: center;
+      margin-top: 12px;
+      cursor: pointer;
+    }
+  }
+}
