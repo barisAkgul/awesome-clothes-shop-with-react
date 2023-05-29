@@ -1,18 +1,31 @@
 import React from "react";
-
 import { BsBasket } from "react-icons/bs";
+import { useStore } from "@stores/index";
+
+import { parserProduct } from "@helpers/utils";
 
 import * as S from "./ProductPageInfoSection.styled";
 
-const ProductPageInfoSection = ({ name, description, cost }) => {
+const ProductPageInfoSection = ({ product }) => {
+  const { addToShoppingCart, shoppingCart } = useStore();
+
+  const { name, description, cost } = parserProduct(product);
+
+  const cartItemCount = shoppingCart.find((item) => item.id === product.id);
+
+  const handleAddBasket = () => {
+    addToShoppingCart(product);
+  };
+
   return (
     <S.ProductPageInfoSection>
       <S.ProductName>{name}</S.ProductName>
       <S.ProductPrice>${cost}</S.ProductPrice>
       <S.ProductDescription>{description}</S.ProductDescription>
 
-      <S.AddedButton>
-        <BsBasket /> Add To Cart
+      <S.AddedButton onClick={handleAddBasket}>
+        <BsBasket /> Add To Cart{" "}
+        {cartItemCount?.quantity > 0 ? `(${cartItemCount.quantity})` : ""}
       </S.AddedButton>
 
       <S.BottomSection>
