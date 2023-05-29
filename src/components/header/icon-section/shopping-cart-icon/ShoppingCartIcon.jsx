@@ -5,7 +5,7 @@ import { Drawer } from "antd";
 import { useStore } from "@stores";
 
 import * as S from "./ShoppingCartIcon.styled";
-// import ShoppingCartContainer from "@/containers/shopping-cart-container/ShoppingCartContainer";
+import { ShoppingCartContainer } from "@containers/shopping-cart-container/ShoppingCartContainer";
 
 const ShoppingCartIcon = () => {
   const [open, setOpen] = useState(false);
@@ -38,7 +38,7 @@ const ShoppingCartIcon = () => {
         open={open}
         style={{ width: "400px" }}
       >
-        {/* <ShoppingCartContainer /> */}
+        <ShoppingCartContainer />
       </Drawer>
     </>
   );
