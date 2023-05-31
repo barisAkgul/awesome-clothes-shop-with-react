@@ -5,6 +5,7 @@ import { MainLayouts } from "@layouts/main";
 //pages
 import { HomePage } from "@pages/home-page/HomePage.jsx";
 import { SingleProductPage } from "@pages/single-product-page/SingleProductPage";
+import { SuccessPage } from "@pages/success-page/SuccessPage";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
           {
             path: "detail/:productId",
             element: <SingleProductPage />,
+          },
+          {
+            path: "success",
+            element: <SuccessPage />,
           },
           {
             path: "*",

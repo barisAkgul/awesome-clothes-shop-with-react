@@ -4,9 +4,8 @@ import { useStore } from "@stores";
 import ShoppingCartItem from "@components/common/shopping-cart-item/ShoppingCartItem";
 
 import * as S from "./ShoppingCartContainer.styled";
-import getStripe from "@helpers/functions/stripe";
 
-import useStripeCheckout from "@hooks/useStripeChecout";
+import useStripeCheckout from "@hooks/useStripeCheckout";
 
 const ShoppingCartContainer = () => {
   const {
