@@ -27,6 +27,11 @@ export const SearchItemDesc = styled.span`
   color: #7a7a7a;
   margin: 2px 0;
   font-size: 10px;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 `;
 
 export const SearchItemPrice = styled.span`

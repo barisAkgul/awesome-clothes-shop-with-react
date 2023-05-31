@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { useStore } from "@stores";
 import ShoppingCartItem from "@components/common/shopping-cart-item/ShoppingCartItem";
 
 import * as S from "./ShoppingCartContainer.styled";
+import getStripe from "@helpers/functions/stripe";
+
+import useStripeCheckout from "@hooks/useStripeChecout";
 
 const ShoppingCartContainer = () => {
   const {
@@ -13,31 +16,44 @@ const ShoppingCartContainer = () => {
     removeShoppingCartItem,
   } = useStore();
 
-  // const router = useRouter();
+  const { stripeError, isLoading, redirectToCheckout } =
+    useStripeCheckout(shoppingCart);
 
-  // async function checkout() {
-  //   const lineItems = shoppingCart.map((cartItem) => {
-  //     return {
-  //       price: cartItem.id,
-  //       quantity: cartItem.quantity,
-  //     };
-  //   });
-  //   console.log(lineItems);
-  //   const res = await fetch("/api/checkout", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({ lineItems }),
-  //   });
-  //   const data = await res.json();
-  //   router.push(data.session.url);
-  // }
+  // const [stripeError, setStripeError] = useState(null);
+  // const [isLoading, setLoading] = useState(false);
+  // const item = shoppingCart.map((cartItem) => {
+  //   return {
+  //     price: cartItem.id,
+  //     quantity: cartItem.quantity,
+  //   };
+  // });
+
+  // const checkoutOptions = {
+  //   lineItems: item,
+  //   mode: "payment",
+  //   successUrl: `${window.location.origin}/success`,
+  //   cancelUrl: `${window.location.origin}/cancel`,
+  // };
+
+  // const redirectToCheckout = async () => {
+  //   setLoading(true);
+  //   console.log("redirectToCheckout");
+
+  //   const stripe = await getStripe();
+  //   const { error } = await stripe.redirectToCheckout(checkoutOptions);
+  //   console.log("Stripe checkout error", error);
+
+  //   if (error) setStripeError(error.message);
+  //   setLoading(false);
+  // };
+
+  // if (stripeError) alert(stripeError);
 
   const totalAmount = shoppingCart?.reduce((acc, product) => {
     return acc + (product.unit_amount / 100) * product.quantity;
   }, 0);
 
+  console.log(shoppingCart);
   return (
     <S.ShoppingCartContainer>
       <S.ShoppingCartItemsContainer>
@@ -55,7 +71,9 @@ const ShoppingCartContainer = () => {
         <S.CartSubtotal>
           Subtotal <span>${totalAmount.toFixed(2)}</span>{" "}
         </S.CartSubtotal>
-        <S.CheckoutButton>Checkout</S.CheckoutButton>
+        <S.CheckoutButton onClick={redirectToCheckout} disable={isLoading}>
+          {isLoading ? "Loading..." : "Checkout"}
+        </S.CheckoutButton>
       </S.ShoppingCartContainerBottomSection>
     </S.ShoppingCartContainer>
   );
