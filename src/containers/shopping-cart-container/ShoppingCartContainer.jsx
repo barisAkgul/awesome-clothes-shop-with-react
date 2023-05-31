@@ -19,35 +19,7 @@ const ShoppingCartContainer = () => {
   const { stripeError, isLoading, redirectToCheckout } =
     useStripeCheckout(shoppingCart);
 
-  // const [stripeError, setStripeError] = useState(null);
-  // const [isLoading, setLoading] = useState(false);
-  // const item = shoppingCart.map((cartItem) => {
-  //   return {
-  //     price: cartItem.id,
-  //     quantity: cartItem.quantity,
-  //   };
-  // });
-
-  // const checkoutOptions = {
-  //   lineItems: item,
-  //   mode: "payment",
-  //   successUrl: `${window.location.origin}/success`,
-  //   cancelUrl: `${window.location.origin}/cancel`,
-  // };
-
-  // const redirectToCheckout = async () => {
-  //   setLoading(true);
-  //   console.log("redirectToCheckout");
-
-  //   const stripe = await getStripe();
-  //   const { error } = await stripe.redirectToCheckout(checkoutOptions);
-  //   console.log("Stripe checkout error", error);
-
-  //   if (error) setStripeError(error.message);
-  //   setLoading(false);
-  // };
-
-  // if (stripeError) alert(stripeError);
+  if (stripeError) console.log(stripeError);
 
   const totalAmount = shoppingCart?.reduce((acc, product) => {
     return acc + (product.unit_amount / 100) * product.quantity;
