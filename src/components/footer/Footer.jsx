@@ -5,7 +5,7 @@ import * as S from "./Footer.styled";
 
 const Footer = () => {
   return (
-    <S.FooterContainer className="section__container footer__container">
+    <S.FooterContainer>
       {footerData.map((col, index) => (
         <S.FooterCol key={index}>
           <S.FooterHeading>{col.heading}</S.FooterHeading>

@@ -23,7 +23,7 @@ const SearchSectionContainer = () => {
   return (
     <>
       <div className="search-section-top-area">
-        <h1 className="search-section-header">Search for products</h1>
+        <h1>Search for products</h1>
         <p className="search-section-sub-desc">
           Start typing to see products you are looking for.
         </p>
