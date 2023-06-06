@@ -3,7 +3,7 @@ import { HiPlusSmall, HiMinusSmall } from "react-icons/hi2";
 import { IoCloseOutline } from "react-icons/io5";
 
 import * as S from "./ShoppingCartItem.styled";
-import { parserProduct } from "@helpers/utils";
+import { parserProduct } from "@helpers/functions/utils";
 
 const ShoppingCartItem = ({
   cartItem,

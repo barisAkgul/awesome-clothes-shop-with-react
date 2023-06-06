@@ -2,7 +2,7 @@ import React from "react";
 import { BsBasket } from "react-icons/bs";
 import { useStore } from "@stores/index";
 
-import { parserProduct } from "@helpers/utils";
+import { parserProduct } from "@helpers/functions/utils";
 
 import * as S from "./ProductPageInfoSection.styled";
 

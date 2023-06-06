@@ -1,5 +1,5 @@
 import "firebase/auth";
-import { auth } from "@helpers/functions/firebase";
+import { auth } from "@helpers/config/firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,

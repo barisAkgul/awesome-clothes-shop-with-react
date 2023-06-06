@@ -1,5 +1,5 @@
 import React from "react";
-import { parserProduct } from "@helpers/utils";
+import { parserProduct } from "@helpers/functions/utils";
 
 import * as S from "./ProductCart.styled";
 import { Link } from "react-router-dom";

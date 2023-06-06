@@ -6,7 +6,7 @@ import { useStore } from "@stores";
 import "./SearchSectionContainer.scss";
 
 import SearchProductCart from "@components/common/search-product-cart/SearchProductCart";
-import { filterProducts } from "@helpers/utils";
+import { filterProducts } from "@helpers/functions/utils";
 
 const SearchSectionContainer = () => {
   const { products } = useStore();

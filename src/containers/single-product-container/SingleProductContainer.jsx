@@ -1,6 +1,6 @@
 import React from "react";
 
-import { parserProduct } from "@helpers/utils";
+import { parserProduct } from "@helpers/functions/utils";
 import ProductPageInfoSection from "@components/single-product/product-page-info-section/ProductPageInfoSection";
 
 import * as S from "./SingleProductContainer.styled";
