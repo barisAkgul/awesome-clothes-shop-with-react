@@ -1,16 +1,22 @@
 import styled from "styled-components";
 
 export const SingleProductPageContainer = styled.div`
-  height: 90vh;
-  /* width: 85vw; */
-  padding: 20px 120px;
-  display: flex;
+  height: auto;
+  padding: 20px 10%;
   gap: 50px;
   border-bottom: 1px solid grey;
   border-bottom: 1px solid rgb(238, 237, 237);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
-  img {
-    height: 100%;
+  .product-image {
+    display: contents;
+    margin: auto;
+    img {
+      max-height: 88vh;
+      max-width: 100%;
+      height: auto;
+    }
   }
 
   hr {
