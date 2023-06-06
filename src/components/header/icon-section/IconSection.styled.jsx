@@ -5,4 +5,5 @@ export const IconSectionContainer = styled.div`
   gap: 16px;
   font-size: 17px;
   cursor: pointer;
+  align-items: center;
 `;

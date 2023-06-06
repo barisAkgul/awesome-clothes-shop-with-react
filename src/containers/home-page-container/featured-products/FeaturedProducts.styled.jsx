@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FeaturedProductsContainer = styled.div`
-  padding: 5rem 1rem;
+  padding: 5rem 0;
 
   h2 {
     padding-bottom: 0.5rem;

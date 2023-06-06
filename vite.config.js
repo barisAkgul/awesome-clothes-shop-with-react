@@ -15,6 +15,7 @@ export default defineConfig({
       "@stores": "/src/stores",
       "@helpers": "/src/helpers",
       "@hooks": "/src/hooks",
+      "@assets": "/src/assets",
     },
   },
 });

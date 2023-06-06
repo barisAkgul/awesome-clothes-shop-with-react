@@ -6,11 +6,12 @@ import { HiOutlineShoppingBag } from "react-icons/hi";
 import * as S from "./IconSection.styled";
 import { SearchIcon } from "./search-icon/SearchIcon";
 import { ShoppingCartIcon } from "./shopping-cart-icon/ShoppingCartIcon";
+import AuthIcon from "./auth-icon/AuthIcon";
 
 const IconSection = () => {
   return (
     <S.IconSectionContainer>
-      <IoPersonOutline />
+         <AuthIcon />
       <SearchIcon />
       <IoIosHeartEmpty />
       <ShoppingCartIcon />

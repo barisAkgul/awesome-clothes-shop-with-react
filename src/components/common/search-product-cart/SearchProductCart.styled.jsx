@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SearchItem = styled.a`
+export const SearchItem = styled.div`
   display: flex;
   column-gap: 15px;
   align-items: center;
