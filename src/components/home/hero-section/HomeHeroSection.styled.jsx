@@ -1,17 +1,21 @@
 import styled from "styled-components";
+import backgroundImage from "@assets/slide-01.jpg";
 
 export const HeroSectionContainer = styled.div`
-  margin-top: 10rem;
-  background-color: var(--light-blue);
+  height: calc(100vh - 65px);
+  background-image: url(${backgroundImage});
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
 `;
 
 export const HeroSectionBody = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  align-items: center;
   gap: 2rem;
   max-width: var(--max-width);
-  margin: auto;
-  padding: 5rem 1rem;
+  height: 100%;
+  padding-left: 2rem;
 `;
 
 export const Content = styled.div`
@@ -20,6 +24,10 @@ export const Content = styled.div`
     font-weight: 600;
     color: var(--text-light);
     margin-bottom: 0.5rem;
+
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+    animation-delay: 0.5s;
   }
 
   h1 {
@@ -27,6 +35,21 @@ export const Content = styled.div`
     font-weight: 400;
     margin-bottom: 2rem;
     color: var(--text-dark);
+
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+    animation-delay: 1s;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   button {
@@ -38,6 +61,22 @@ export const Content = styled.div`
     border: none;
     cursor: pointer;
     transition: 0.3s;
+
+    opacity: 0;
+    transform: scale(0);
+    animation: scaleIn 0.5s ease-in-out forwards;
+    animation-delay: 1.5s;
+  }
+
+  @keyframes scaleIn {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 `;
 
