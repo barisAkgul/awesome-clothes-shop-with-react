@@ -4,6 +4,7 @@ export const FooterContainer = styled.footer`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 2rem;
+  border-top: 1px solid var(--alabaster);
 
   margin: auto;
   padding: 5rem 1rem;

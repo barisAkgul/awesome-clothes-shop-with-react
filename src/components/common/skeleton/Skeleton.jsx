@@ -66,9 +66,11 @@ const SkeletonForImage = styled.div`
   animation: ${skeletonAnimation} 2.5s infinite;
 `;
 
-const Skeleton = ({ type }) => {
-  const COUNTER = 4;
-
+const Skeleton = ({ type, count = 4, width = 0, height = 0 }) => {
+  const style = {
+    width: `${width}px`,
+    height: `${height}px`,
+  };
   const FeedSkeleton = () => (
     <SkeletonContainer key={Math.random()}>
       <SkeletonImage />
@@ -88,7 +90,7 @@ const Skeleton = ({ type }) => {
 
   if (type === "image") return <ImageSkeleton />;
   if (type === "feed")
-    return Array.from({ length: COUNTER }).map((_, index) => (
+    return Array.from({ length: count }).map((_, index) => (
       <FeedSkeleton key={index} />
     ));
 };

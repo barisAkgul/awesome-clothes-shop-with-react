@@ -7,10 +7,13 @@ import "./SearchSectionContainer.scss";
 
 import SearchProductCart from "@components/common/search-product-cart/SearchProductCart";
 import { filterProducts } from "@helpers/functions/utils";
+import useFetch from "@hooks/useFetch";
 
 const SearchSectionContainer = () => {
-  const { products } = useStore();
   const [searchValue, setSearchValue] = useState("");
+
+  const { getProducts } = useStore();
+  const { data: products, error, loading } = useFetch(() => getProducts());
 
   const handleSearch = (event) => {
     setSearchValue(event.target.value);

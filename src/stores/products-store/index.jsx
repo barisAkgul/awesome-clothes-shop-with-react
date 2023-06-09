@@ -8,14 +8,19 @@ export const createProductsStore = (set) => ({
   product: {},
   products: [],
 
-  getProducts: async () => {
-    const res = await stripe.prices.list({ expand: ["data.product"] });
+  getProducts: async ({ limit = null } = {}) => {
+    const listOptions = { expand: ["data.product"] };
 
+    if (limit !== null) {
+      listOptions.limit = limit;
+    }
+
+    const res = await stripe.prices.list(listOptions);
+    console.log(res);
     const finalProducts = res.data;
     await set({ products: finalProducts });
     return finalProducts;
   },
-
   getProduct: async (productId) => {
     const product = await stripe.prices.retrieve(productId, {
       expand: ["product"],

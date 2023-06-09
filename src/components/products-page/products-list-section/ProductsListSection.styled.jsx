@@ -4,11 +4,7 @@ export const ProductsListContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
-
-  //   display: grid;
-  //   grid-gap: 20px;
-  //   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  //   padding: 30px 80px;
+  padding: 24px 12px;
 `;
 
 export const ProductItem = styled.div`
@@ -20,7 +16,9 @@ export const ProductImage = styled.img`
 `;
 
 export const ProductTitle = styled.h3`
-  /* Ürün başlığı stilini burada tanımla */
+  font-size: 14px;
+  color: var(--text-light);
+  font-weight: 500;
 `;
 
 export const ProductPrice = styled.span`

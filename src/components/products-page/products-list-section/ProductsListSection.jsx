@@ -2,45 +2,40 @@ import React from "react";
 import * as S from "./ProductsListSection.styled";
 
 import { AnimatePresence, motion } from "framer-motion";
-
+import Skeleton from "@components/common/skeleton/Skeleton";
+import { applyFilters } from "./helpers";
+import { Link } from "react-router-dom";
 const ProductsListSection = ({
   selectedCategory,
-  maxPrice,
+  maxCost,
   selectedOption,
+  loading,
+  products,
 }) => {
-  const products = [
-    { id: 1, title: "Product 1", category: "man", price: 100 },
-    { id: 2, title: "Product 2", category: "woman", price: 500 },
-    { id: 3, title: "Product 3", category: "man", price: 800 },
-    { id: 4, title: "Product 4", category: "man", price: 300 },
-    { id: 5, title: "Product 5", category: "woman", price: 400 },
-    { id: 6, title: "Product 6", category: "man", price: 800 },
-    // ...
-  ];
+  if (loading) {
+    return (
+      <S.ProductsListContainer>
+        <Skeleton type={"feed"} count={12} />
+      </S.ProductsListContainer>
+    );
+  }
 
-  const filteredByCategory =
-    selectedCategory === "all" || selectedCategory === ""
-      ? products
-      : products.filter((product) => product.category === selectedCategory);
-
-  const filteredByPrice = filteredByCategory.filter(
-    (product) => product.price <= maxPrice
+  const filteredProducts = applyFilters(
+    products,
+    selectedCategory,
+    maxCost,
+    selectedOption
   );
 
-  let sortedProducts = [...filteredByPrice];
-  if (selectedOption === "asc") {
-    sortedProducts.sort((a, b) => a.price - b.price);
-  } else if (selectedOption === "desc") {
-    sortedProducts.sort((a, b) => b.price - a.price);
-  }
+  console.log(products);
 
   return (
     <S.ProductsListContainer>
       <AnimatePresence>
-        {sortedProducts.map((product) => (
+        {filteredProducts.map((product) => (
           <motion.div
             className="image-card"
-            key={product.id}
+            key={product.productId}
             layout
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -48,9 +43,11 @@ const ProductsListSection = ({
             transition={{ duration: 0.3 }}
           >
             <S.ProductItem>
-              <img src="https://joesch.moe/api/v1/random" alt={product.title} />
-              <S.ProductTitle>{product.title}</S.ProductTitle>
-              <S.ProductPrice>${product.price}</S.ProductPrice>
+              <Link to={`/detail/${product.productId}`}>
+                <img src={product.images[0]} alt={product.name} />
+                <S.ProductTitle>{product.name}</S.ProductTitle>
+                <S.ProductPrice>${product.cost}</S.ProductPrice>
+              </Link>
             </S.ProductItem>
           </motion.div>
         ))}

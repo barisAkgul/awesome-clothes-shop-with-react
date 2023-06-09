@@ -1,6 +1,7 @@
 export const parserProduct = (product) => {
   const { id: productId, unit_amount: cost, product: productInfo } = product;
-  const { name, description, images } = productInfo;
+  const { name, description, images, metadata } = productInfo;
+  const { short_description, category } = metadata;
   const formattedCost = cost / 100;
 
   return {
@@ -9,6 +10,8 @@ export const parserProduct = (product) => {
     name,
     description,
     images,
+    short_description,
+    category,
   };
 };
 
