@@ -9,7 +9,11 @@ import * as S from "./FeaturedProducts.styled";
 
 const FeaturedProducts = () => {
   const { getProducts } = useStore();
-  const { data: products, error, loading } = useFetch(() => getProducts());
+  const {
+    data: products,
+    error,
+    loading,
+  } = useFetch(() => getProducts({ limit: 4 }));
 
   if (error) console.log(error);
 
