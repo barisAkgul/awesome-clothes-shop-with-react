@@ -6,6 +6,16 @@ export const ShoppingCartContainer = styled.div`
   justify-content: space-between;
   height: 100%;
   padding-right: 15px;
+
+  .empty-cart {
+    margin-top: 50px;
+    padding: 20px;
+    border: 2px solid black;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+  }
 `;
 
 export const ShoppingCartItemsContainer = styled.div`

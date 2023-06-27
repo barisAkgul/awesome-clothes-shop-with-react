@@ -28,15 +28,19 @@ const ShoppingCartContainer = () => {
   return (
     <S.ShoppingCartContainer>
       <S.ShoppingCartItemsContainer>
-        {shoppingCart.map((cartItem) => (
-          <ShoppingCartItem
-            cartItem={cartItem}
-            increaseShoppingCartItemCount={increaseShoppingCartItemCount}
-            decreaseShoppingCartItemCount={decreaseShoppingCartItemCount}
-            removeShoppingCartItem={removeShoppingCartItem}
-            key={cartItem.id}
-          />
-        ))}
+        {shoppingCart.length === 0 ? (
+          <p className="empty-cart">Empty Cart</p>
+        ) : (
+          shoppingCart.map((cartItem) => (
+            <ShoppingCartItem
+              cartItem={cartItem}
+              increaseShoppingCartItemCount={increaseShoppingCartItemCount}
+              decreaseShoppingCartItemCount={decreaseShoppingCartItemCount}
+              removeShoppingCartItem={removeShoppingCartItem}
+              key={cartItem.id}
+            />
+          ))
+        )}
       </S.ShoppingCartItemsContainer>
       <S.ShoppingCartContainerBottomSection>
         <S.CartSubtotal>
