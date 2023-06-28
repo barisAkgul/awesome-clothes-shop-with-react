@@ -5,8 +5,6 @@ const useStripeCheckout = (shoppingCart) => {
   const [stripeError, setStripeError] = useState(null);
   const [isLoading, setLoading] = useState(false);
 
-  const PUBLIC_URL = import.meta.env.VITE_ROOT_URL || window.location.origin;
-
   const item = shoppingCart.map((cartItem) => {
     return {
       price: cartItem.id,
@@ -23,8 +21,8 @@ const useStripeCheckout = (shoppingCart) => {
       const session = await stripe.redirectToCheckout({
         lineItems: item,
         mode: "payment",
-        successUrl: `${PUBLIC_URL}/success`,
-        cancelUrl: `${PUBLIC_URL}`,
+        successUrl: `${window.location.origin}/success`,
+        cancelUrl: `${window.location.origin}`,
       });
 
       if (session.error) {
