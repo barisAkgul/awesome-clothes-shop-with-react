@@ -1,6 +1,10 @@
+import latestNews1 from "@assets/latest-news-1.jpg";
+import latestNews2 from "@assets/latest-news-2.jpg";
+import latestNews3 from "@assets/latest-news-3.jpg";
+
 export const newsData = [
   {
-    imgSrc: "src/assets/latest-news-1.jpg",
+    imgSrc: latestNews1,
     category: "FASHION",
     author: "JAMES SIMSON",
     date: "FEB 2, 2019",
@@ -10,7 +14,7 @@ export const newsData = [
     link: "#",
   },
   {
-    imgSrc: "src/assets/latest-news-2.jpg",
+    imgSrc: latestNews2,
     category: "TRENDS",
     author: "JAMES SIMSON",
     date: "APR 15, 2019",
@@ -20,7 +24,7 @@ export const newsData = [
     link: "#",
   },
   {
-    imgSrc: "src/assets/latest-news-3.jpg",
+    imgSrc: latestNews3,
     category: "STYLES",
     author: "JAMES SIMSON",
     date: "JUL 22 , 2019",
@@ -30,7 +34,7 @@ export const newsData = [
     link: "#",
   },
   {
-    imgSrc: "src/assets/latest-news-1.jpg",
+    imgSrc: latestNews1,
     category: "FASHION",
     author: "JAMES SIMSON",
     date: "FEB 2, 2019",
@@ -40,7 +44,7 @@ export const newsData = [
     link: "#",
   },
   {
-    imgSrc: "src/assets/latest-news-2.jpg",
+    imgSrc: latestNews2,
     category: "TRENDS",
     author: "JAMES SIMSON",
     date: "APR 15, 2019",
@@ -50,7 +54,7 @@ export const newsData = [
     link: "#",
   },
   {
-    imgSrc: "src/assets/latest-news-3.jpg",
+    imgSrc: latestNews3,
     category: "STYLES",
     author: "JAMES SIMSON",
     date: "JUL 22 , 2019",
@@ -60,7 +64,7 @@ export const newsData = [
     link: "#",
   },
   {
-    imgSrc: "src/assets/latest-news-1.jpg",
+    imgSrc: latestNews1,
     category: "FASHION",
     author: "JAMES SIMSON",
     date: "FEB 2, 2019",
@@ -70,7 +74,7 @@ export const newsData = [
     link: "#",
   },
   {
-    imgSrc: "src/assets/latest-news-2.jpg",
+    imgSrc: latestNews2,
     category: "TRENDS",
     author: "JAMES SIMSON",
     date: "APR 15, 2019",
