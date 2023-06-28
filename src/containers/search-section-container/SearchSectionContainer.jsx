@@ -21,8 +21,6 @@ const SearchSectionContainer = () => {
 
   const filteredProducts = filterProducts(products, searchValue);
 
-  console.log(filteredProducts, products);
-
   return (
     <>
       <div className="search-section-top-area">

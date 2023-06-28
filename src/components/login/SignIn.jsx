@@ -23,7 +23,6 @@ const SignIn = () => {
       });
   };
 
-  console.log("user:", user);
   return (
     <>
       <h2 className="login-form-header">Sing In</h2>
