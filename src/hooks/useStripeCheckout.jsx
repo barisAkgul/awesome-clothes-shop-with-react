@@ -24,7 +24,7 @@ const useStripeCheckout = (shoppingCart) => {
         lineItems: item,
         mode: "payment",
         //mode: "subscription",
-        successUrl: `${PUBLIC_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
+        successUrl: `${PUBLIC_URL}/success`,
         cancelUrl: `${PUBLIC_URL}`,
       });
 
