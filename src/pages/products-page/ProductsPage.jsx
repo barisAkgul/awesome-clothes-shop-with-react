@@ -9,8 +9,6 @@ const ProductsPage = () => {
   const { getProducts } = useStore();
   const { data, error, loading } = useFetch(() => getProducts());
 
-  console.log(data);
-
   const products = data?.map((product) => parserProduct(product));
 
   return <ProductsPageContainer products={products} loading={loading} />;

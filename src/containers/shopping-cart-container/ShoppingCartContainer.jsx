@@ -24,7 +24,6 @@ const ShoppingCartContainer = () => {
     return acc + (product.unit_amount / 100) * product.quantity;
   }, 0);
 
-  console.log(shoppingCart);
   return (
     <S.ShoppingCartContainer>
       <S.ShoppingCartItemsContainer>

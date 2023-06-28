@@ -27,8 +27,6 @@ const ProductsListSection = ({
     selectedOption
   );
 
-  console.log(products);
-
   return (
     <S.ProductsListContainer>
       <AnimatePresence>
