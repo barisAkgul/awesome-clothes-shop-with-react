@@ -18,4 +18,7 @@ export default defineConfig({
       "@assets": "/src/assets",
     },
   },
+  optimizeDeps: {
+    include: ["react", "react-dom"],
+  },
 });

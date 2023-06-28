@@ -7,6 +7,7 @@ import { HomePage } from "@pages/home-page/HomePage.jsx";
 import { SingleProductPage } from "@pages/single-product-page/SingleProductPage";
 import { SuccessPage } from "@pages/success-page/SuccessPage";
 import { ProductsPage } from "@pages/products-page/ProductsPage";
+import { BlogPage } from "@pages/blog-page/BlogPage";
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
           {
             path: "products",
             element: <ProductsPage />,
+          },
+          {
+            path: "blog",
+            element: <BlogPage />,
           },
           {
             path: "success",

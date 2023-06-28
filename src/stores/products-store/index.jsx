@@ -9,14 +9,13 @@ export const createProductsStore = (set) => ({
   products: [],
 
   getProducts: async ({ limit = null } = {}) => {
-    const listOptions = { expand: ["data.product"] };
+    const listOptions = { expand: ["data.product"], active: true };
 
     if (limit !== null) {
       listOptions.limit = limit;
     }
 
     const res = await stripe.prices.list(listOptions);
-    console.log(res);
     const finalProducts = res.data;
     await set({ products: finalProducts });
     return finalProducts;

@@ -11,9 +11,9 @@ import AuthIcon from "./auth-icon/AuthIcon";
 const IconSection = () => {
   return (
     <S.IconSectionContainer>
-         <AuthIcon />
+      <AuthIcon />
       <SearchIcon />
-      <IoIosHeartEmpty />
+      {/* <IoIosHeartEmpty /> */}
       <ShoppingCartIcon />
     </S.IconSectionContainer>
   );

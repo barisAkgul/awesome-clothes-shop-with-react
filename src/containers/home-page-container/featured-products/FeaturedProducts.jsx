@@ -17,10 +17,6 @@ const FeaturedProducts = () => {
 
   if (error) console.log(error);
 
-  if (products) {
-    console.log(products);
-  }
-
   return (
     <S.FeaturedProductsContainer>
       <h2>Featured Products</h2>

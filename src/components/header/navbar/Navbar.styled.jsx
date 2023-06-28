@@ -4,6 +4,7 @@ export const Navbar = styled.div`
   display: flex;
   gap: 36px;
   color: black;
+  padding-top: 4px;
 `;
 
 export const NavbarItem = styled.div`

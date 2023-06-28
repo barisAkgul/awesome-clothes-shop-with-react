@@ -10,10 +10,11 @@ export const FilterSectionContainer = styled.div`
   gap: 20px;
   flex-wrap: wrap;
 
-  > * {
-    flex: 1 0 200px;
+  @media screen and (max-width: 967px) {
+    > * {
+      flex: 1 0 200px;
+    }
   }
-
   > :last-child {
     // flex-basis: auto;
     //padding-left: 120px;
@@ -32,7 +33,7 @@ export const Categories = styled.div`
   }
 
   .active {
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid blue;
   }
 `;
 
