@@ -5,6 +5,8 @@ const useStripeCheckout = (shoppingCart) => {
   const [stripeError, setStripeError] = useState(null);
   const [isLoading, setLoading] = useState(false);
 
+  const PUBLIC_URL = import.meta.env.VITE_ROOT_URL || window.location.origin;
+
   const item = shoppingCart.map((cartItem) => {
     return {
       price: cartItem.id,
@@ -22,8 +24,8 @@ const useStripeCheckout = (shoppingCart) => {
         lineItems: item,
         mode: "payment",
         //mode: "subscription",
-        successUrl: `${window.location.origin}/success?session_id={CHECKOUT_SESSION_ID}`,
-        cancelUrl: `${window.location.origin}`,
+        successUrl: `${PUBLIC_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancelUrl: `${PUBLIC_URL}`,
       });
 
       if (session.error) {
