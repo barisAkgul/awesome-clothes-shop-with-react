@@ -23,7 +23,6 @@ const useStripeCheckout = (shoppingCart) => {
       const session = await stripe.redirectToCheckout({
         lineItems: item,
         mode: "payment",
-        //mode: "subscription",
         successUrl: `${PUBLIC_URL}/success`,
         cancelUrl: `${PUBLIC_URL}`,
       });
