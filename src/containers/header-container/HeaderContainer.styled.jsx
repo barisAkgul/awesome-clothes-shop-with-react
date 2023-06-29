@@ -11,4 +11,9 @@ export const Header = styled.header`
   align-items: center;
   padding: 0px 40px;
   font-weight: 500;
+
+  @media screen and (max-width: 576px) {
+    padding: 0px 15px;
+  }
+  }
 `;

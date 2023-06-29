@@ -6,7 +6,9 @@ import * as S from "./Logo.styled";
 const Logo = () => {
   return (
     <S.Logo>
-      <Link to="/">Logo</Link>
+      <Link to="/">
+        W<span>HISPERS</span>
+      </Link>
     </S.Logo>
   );
 };
