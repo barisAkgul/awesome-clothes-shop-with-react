@@ -40,4 +40,7 @@ export const CheckoutButton = styled.div`
   text-align: center;
   margin-top: 12px;
   cursor: pointer;
+
+  opacity: ${(props) => (props.disabled ? 0.7 : 1)};
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
 `;

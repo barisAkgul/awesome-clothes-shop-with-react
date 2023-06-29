@@ -34,7 +34,6 @@ export const createUserStore = (set) => ({
       await updateProfile(cred.user, {
         displayName: name,
       });
-      console.log(cred.user);
     } catch (error) {
       set({ error: error.message });
     }

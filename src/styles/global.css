@@ -4,11 +4,6 @@ body {
   overflow-x: hidden;
 }
 
-/*Not found ve loading sayfaları 100% height olmadığı için globalde veriyoruz*/
-div[data-nextjs-scroll-focus-boundary] {
-  height: 100%;
-}
-
 .body-container {
   display: grid;
   grid-template-columns: 1fr min(1440px, 100%) 1fr;

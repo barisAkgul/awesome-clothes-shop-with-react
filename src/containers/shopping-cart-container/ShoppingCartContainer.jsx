@@ -24,6 +24,9 @@ const ShoppingCartContainer = () => {
     return acc + (product.unit_amount / 100) * product.quantity;
   }, 0);
 
+  const isDisable = isLoading || shoppingCart.length === 0;
+  console.log(isDisable);
+
   return (
     <S.ShoppingCartContainer>
       <S.ShoppingCartItemsContainer>
@@ -45,7 +48,7 @@ const ShoppingCartContainer = () => {
         <S.CartSubtotal>
           Subtotal <span>${totalAmount.toFixed(2)}</span>{" "}
         </S.CartSubtotal>
-        <S.CheckoutButton onClick={redirectToCheckout} disable={isLoading}>
+        <S.CheckoutButton disabled={isDisable} onClick={redirectToCheckout}>
           {isLoading ? "Loading..." : "Checkout"}
         </S.CheckoutButton>
       </S.ShoppingCartContainerBottomSection>
