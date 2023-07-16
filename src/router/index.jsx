@@ -8,13 +8,15 @@ import { SingleProductPage } from "@pages/single-product-page/SingleProductPage"
 import { SuccessPage } from "@pages/success-page/SuccessPage";
 import { ProductsPage } from "@pages/products-page/ProductsPage";
 import { BlogPage } from "@pages/blog-page/BlogPage";
+import { ErrorPage } from "@components/common/error/ErrorPage";
+import { PageNotFound } from "@components/common/page-not-found/PageNotFound";
 
 export const router = createBrowserRouter([
   {
     element: <MainLayouts />,
     children: [
       {
-        errorElement: <h1>Error Page</h1>,
+        errorElement: <ErrorPage />,
         children: [
           {
             path: "/",
@@ -38,7 +40,7 @@ export const router = createBrowserRouter([
           },
           {
             path: "*",
-            element: <h1>Page Not Found</h1>,
+            element: <PageNotFound />,
           },
         ],
       },
