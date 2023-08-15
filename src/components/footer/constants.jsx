@@ -3,7 +3,7 @@ export const footerData = [
     heading: "CONTACT INFO",
     items: [
       "123, London Bridge Street, London",
-      "support@monsa.com",
+      "support@whisper.com",
       "(+012) 3456 789",
     ],
   },
