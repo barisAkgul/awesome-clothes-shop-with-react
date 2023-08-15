@@ -58,7 +58,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     border-left: 1px solid #dee0ea;
-    max-height: 200px;
+    max-height: 350px;
     overflow: auto;
 
     .search-result-item {
